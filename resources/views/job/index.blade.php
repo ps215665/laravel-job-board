@@ -1,5 +1,25 @@
 <x-layout>
     @foreach( $jobs as $job )
-        <div class="mb-4 rounded-md border-spacing-1 border-gray-300 p-4 text-blue-500">{{$job->title}}</div>
+        <x-card class="text-orange-900">
+            <div class="flex justify-between">
+                <h2 class="text-lg font-medium mb-2">{{ $job->title  }}</h2>
+                <div class="text-slate-500">
+                    ${{ number_format($job->salary) }}
+                </div>
+            </div>
+            <div class="mb-4 flex justify-between text-sm text-slate-500 items-center">
+                <div class="flex space-x-4">
+                    <div>Comapny Name</div>
+                    <div>{{ $job->location }}</div>
+                </div>
+                <div class="flex space-x-1 text-xs">
+                    <x-tag>{{ Str::ucfirst($job->experience) }}</x-tag>
+                    <x-tag>{{ $job->category }}</x-tag>
+                </div>
+            </div>
+            <p class="text-sm text-slate-500">
+                {!! nl2br(e($job->description)) !!}
+            </p>
+        </x-card>
     @endforeach
 </x-layout>
