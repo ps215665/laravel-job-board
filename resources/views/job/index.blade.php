@@ -6,17 +6,23 @@
             <div class="mb-4 grid grid-cols-2 gap-4">
                 <div>
                     <div class="mb-1 font-semibold">Search</div>
-                    <x-text-input name="search" value="" placeholder="Search for any text"></x-text-input>
+                    <x-text-input name="search" value="{{request('search')}}" placeholder="Search for any text"></x-text-input>
                 </div>
                 <div>
                     <div class="mb-1 font-semibold">Salary</div>
                     <div class="flex space-x-2">
-                        <x-text-input name="min_salary" value="" placeholder="From"></x-text-input>
-                        <x-text-input name="max_salary" value="" placeholder="To"></x-text-input>
+                        <x-text-input name="min_salary" value="{{request('min_salary')}}" placeholder="From"></x-text-input>
+                        <x-text-input name="max_salary" value="{{request('max_salary')}}" placeholder="To"></x-text-input>
                     </div>
                 </div>
-                <div>3</div>
-                <div>4</div>
+                <div>
+                    <div class="mb-1 font-semibold">Experience</div>
+                    <x-radio-group name="experience" :options="\App\Models\Job::$experience"/>
+                </div>
+                <div>
+                    <div class="mb-1 font-semibold">Category</div>
+                    <x-radio-group name="category" :options="\App\Models\Job::$category"/>
+                </div>
             </div>
             <div class="w-full flex justify-center">
                 <button class="border-1 p-2 bg-black text-white hover:bg-white hover:text-black underline cursor-pointer rounded-lg" >Filter</button>
