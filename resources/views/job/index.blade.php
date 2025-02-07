@@ -18,15 +18,22 @@
                 <div>3</div>
                 <div>4</div>
             </div>
-            <button class="w-full">Filter</button>
+            <div class="w-full flex justify-center">
+                <button class="border-1 p-2 bg-black text-white hover:bg-white hover:text-black underline cursor-pointer rounded-lg" >Filter</button>
+            </div>
         </form>
     </x-card>
 
-@foreach( $jobs as $job )
+    @foreach( $jobs as $job )
         <x-job-card class="text-orange-900" :$job>
             <div class="mt-3 ">
                 <x-link-button :href="route('jobs.show', $job)">Show</x-link-button>
             </div>
         </x-job-card>
     @endforeach
+
+    <div>
+        {{$jobs->links()}}
+    </div>
+
 </x-layout>
