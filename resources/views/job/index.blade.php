@@ -1,9 +1,9 @@
 <x-layout>
     <x-breadcrumbs class="mb-4" :links="['Jobs' => route('jobs.index')]"/>
 
-    <x-card class="mb-4 text-sm" x-data="">
+    <x-card class="mb-4 text-sm absolute left-0 top-0 py-11 h-full max-w-sm" x-data="">
         <form x-ref="filters" id="filtering-form" action="{{route('jobs.index')}}" method="GET">
-            <div class="mb-4 grid grid-cols-2 gap-4">
+            <div class="mb-4 grid grid-cols-1 gap-4">
                 <div>
                     <div class="mb-1 font-semibold">Search</div>
                     <x-text-input name="search" value="{{request('search')}}" placeholder="Search for any text" form-ref="filters" ></x-text-input>
@@ -30,16 +30,18 @@
         </form>
     </x-card>
 
-    @foreach( $jobs as $job )
+    @forelse($jobs as $job)
         <x-job-card class="text-orange-900" :$job>
             <div class="mt-3 ">
                 <x-link-button :href="route('jobs.show', $job)">Show</x-link-button>
             </div>
         </x-job-card>
-    @endforeach
+    @empty
+        <span class="top-10 py-10 text-red-900">No job found.</span>
+    @endforelse
 
     <div>
-        {{$jobs->links()}}
+        {!! $jobs->render() !!}
     </div>
 
 </x-layout>
