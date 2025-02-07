@@ -20,6 +20,11 @@ class Job extends Model
         'Marketing'
     ];
 
+    public function employer()
+    {
+        return $this->belongsTo(Employer::class);
+    }
+
     public function scopeFilter(Builder | QueryBuilder $query, array $filters)
     {
         return $query->when($filters['search'] ?? null, function ($query, $search) {
