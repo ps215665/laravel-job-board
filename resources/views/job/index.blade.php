@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="w-full flex justify-center">
-                <button class="border-1 p-2 bg-black text-white hover:bg-white hover:text-black underline cursor-pointer rounded-lg" >Filter</button>
+                <x-button class="cursor-pointer" >Filter</x-button>
             </div>
         </form>
     </x-card>
