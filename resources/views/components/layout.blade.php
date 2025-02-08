@@ -27,6 +27,9 @@
                     <span class="text-slate-600 font-semibold mr-3">Welcome, {{ auth()->user()->name ?? ''}}</span>
                 </li>
                 <li>
+                    <span class="text-slate-600 font-semibold mr-3 underline pointer-cursor"><a href="{{ route('my-job-applications.index') }}">My Applications</a></span>
+                </li>
+                <li>
                     <form method="POST" action="{{route('auth.destroy')}}">
                         @csrf
                         @method('DELETE')

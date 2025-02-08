@@ -12,6 +12,12 @@ Route::delete('logout', fn() => to_route('auth.destroy'))->name('logout');
 Route::delete('auth', [\App\Http\Controllers\AuthController::class, 'destroy'])->name('auth.destroy');
 
 Route::middleware('auth')->group(function () {
-   Route::resource('job.application', \App\Http\Controllers\JobApplication::class)
+    Route::resource('job.application', \App\Http\Controllers\JobApplication::class)
    ->only(['create', 'store', 'show']);
+
+    Route::resource('my-job-applications', \App\Http\Controllers\MyJobApplicationController::class)
+        ->only(['index', 'destroy']);
 });
+
+
+
