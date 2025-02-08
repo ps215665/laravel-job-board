@@ -5,8 +5,11 @@
             {!! nl2br(e($job->description)) !!}
         </p>
 
-        <x-link-button :href="route('job.application.create', $job)">Apply</x-link-button>
-
+        @can('apply', $job)
+            <x-link-button :href="route('job.application.create', $job)">Apply</x-link-button>
+            @else
+            <div class="text-center text-sm font-medium text-slate-500 text-xl text-blue-500 mt-3">You've already applied to this job.</div>
+        @endcan
     </x-job-card>
 
     <x-card class="mb-4">

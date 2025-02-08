@@ -45,7 +45,7 @@
             @endforelse
 
             <div>
-                {!! $jobs->render() !!}
+                {!! e($jobs->appends(request()->query())->links()) !!}
             </div>
         </div>
     </div>

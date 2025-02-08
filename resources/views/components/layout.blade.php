@@ -16,12 +16,12 @@
 </head>
     <body class="mx-auto mt-10 max-w-2xl bg-slate-200 text-slate-700">
     <nav class="mb-8 flex justify-between text-lg font-medium">
-        <ul class="flex space-x-2">
+        <ul class="flex space-x-2 items-center">
             <li>
-                <a href="{{route('jobs.index')}}">Home</a>
+                <a href="{{route('jobs.index')}}" class="bg-black text-white rounded-md px-2 py-1">Home</a>
             </li>
         </ul>
-        <ul class="flex space-x-2">
+        <ul class="flex space-x-2 items-center">
             @auth
                 <li>
                     <span class="text-slate-600 font-semibold mr-3">Welcome, {{ auth()->user()->name ?? ''}}</span>
@@ -30,12 +30,12 @@
                     <form method="POST" action="{{route('auth.destroy')}}">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="cursor-pointer">Logout</button>
+                        <button type="submit" class="cursor-pointer bg-red-500 text-white rounded-md px-2 py-0.5 hover:bg-red-600">Logout</button>
                     </form>
 
                 </li>
                 @else
-                <a href="{{route('auth.create')}}">Login</a>
+                <a href="{{route('auth.create')}}" class="bg-blue-500 text-white px-2 py-0.5 rounded-md">Login</a>
             @endauth
         </ul>
     </nav>

@@ -16,7 +16,7 @@ class JobController extends Controller
 
         $jobs = Job::query()->filter($filters);
 
-        return view('job.index', ['jobs' => $jobs->simplePaginate(5)]);
+        return view('job.index', ['jobs' => $jobs->simplePaginate(4)]);
     }
 
     /**
