@@ -16,10 +16,10 @@
 
             <div class="mb-8 flex justify-between text-sm font-medium">
                 <div>
-                    <div class="flex items-center space-x-2">
+                    <dNiv class="flex items-center space-x-2">
                         <input type="checkbox" name="remember" class="rounder-sm border border-slate-400" />
                         <label for="">Remember Me</label>
-                    </div>
+                    </dNiv>
                 </div>
                 <div>
                     <a href="#" class="text-indigo-600 hover:underline">Forget Password?</a>
