@@ -6,7 +6,9 @@
         </p>
 
         @can('apply', $job)
-            <x-link-button :href="route('job.application.create', $job)">Apply</x-link-button>
+            <div class="mt-2">
+                <x-link-button :href="route('job.application.create', $job)">Apply</x-link-button>
+            </div>
             @else
             <div class="text-center text-sm font-medium text-slate-500 text-xl text-blue-500 mt-3">You've already applied to this job.</div>
         @endcan

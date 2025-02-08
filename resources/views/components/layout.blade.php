@@ -14,7 +14,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
-    <body class="mx-auto mt-10 max-w-2xl bg-slate-200 text-slate-700">
+    <body class="mx-auto mt-10 max-w-4xl bg-slate-200 text-slate-700">
     <nav class="mb-8 flex justify-between text-lg font-medium">
         <ul class="flex space-x-2 items-center">
             <li>
