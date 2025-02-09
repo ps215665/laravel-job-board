@@ -10,12 +10,12 @@
             @csrf
             <div class="mb-4">
                 <label for="expected_salary" class="mb-1">Expected Salary</label>
-                <x-text-input type="number" name="expected_salary" form-ref="application" />
+                <x-text-input type="number" name="expected_salary" />
             </div>
 
             <div class="mb-4">
                 <label for="expected_salary" class="mb-1">Upload CV</label>
-                <x-text-input type="file" name="cv" form-ref="application" />
+                <x-text-input type="file" name="cv"/>
             </div>
 
             <x-button class="w-full cursor-pointer">Apply</x-button>

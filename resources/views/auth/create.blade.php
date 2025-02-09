@@ -7,11 +7,11 @@
             @csrf
             <div class="mb-8">
                 <label for="email">E-Mail</label>
-                <x-text-input name="email" form-ref="login"></x-text-input>
+                <x-text-input name="email"></x-text-input>
             </div>
             <div class="mb-8">
                 <label for="password">Password</label>
-                <x-text-input name="password" type="password" class="mt-2" form-ref="login"></x-text-input>
+                <x-text-input name="password" type="password" class="mt-2"></x-text-input>
             </div>
 
             <div class="mb-8 flex justify-between text-sm font-medium">

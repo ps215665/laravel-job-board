@@ -10,7 +10,7 @@
                 <x-link-button :href="route('job.application.create', $job)">Apply</x-link-button>
             </div>
             @else
-            <div class="text-center text-sm font-medium text-slate-500 text-xl text-blue-500 mt-3">You've already applied to this job.</div>
+            <div class="text-center text-sm font-medium text-slate-500 text-xl text-blue-500 mt-3">{{ auth()->user() ? "You've already applied to this job." : "Login to Apply for this Job" }}</div>
         @endcan
     </x-job-card>
 
