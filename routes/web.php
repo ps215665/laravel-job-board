@@ -20,6 +20,10 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('employer', \App\Http\Controllers\EmployerController::class)
         ->only(['create', 'store']);
+
+    Route::middleware('employer')->resource('my-jobs', \App\Http\Controllers\MyJobController::class);
+//        ->only(['create', 'store']);
+
 });
 
 
