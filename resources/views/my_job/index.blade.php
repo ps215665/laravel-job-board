@@ -9,6 +9,6 @@
     @forelse($jobs as $job)
         <x-job-card :$job></x-job-card>
     @empty
-        No Jobs
+        No Jobs 
     @endforelse
 </x-layout>
