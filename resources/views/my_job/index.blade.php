@@ -7,8 +7,12 @@
         </x-link-button>
     </div>
     @forelse($jobs as $job)
-        <x-job-card :$job></x-job-card>
+        <x-job-card :$job>
+            <div class="flex space-x-2">
+                <x-link-button href="{{route('my-jobs.edit', $job)}}">Edit</x-link-button>
+            </div>
+        </x-job-card>
     @empty
-        No Jobs 
+        No Jobs
     @endforelse
 </x-layout>

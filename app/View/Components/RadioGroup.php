@@ -13,7 +13,9 @@ class RadioGroup extends Component
      */
     public function __construct(
         public string $name,
-        public array $options
+        public array $options,
+        public ?string $selectedOption,
+        public ?bool $allOption = true
     ) {
         //
     }
